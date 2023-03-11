@@ -6,10 +6,10 @@ import {Context} from "../Context"
 function Header(){
     return (
 
-    <header>
-        <Link to ="localhost:3000/"><h1>Cards</h1></Link>
-        <Link to="localhost:3000/cart"><h1>Cart</h1></Link>
-    </header>
+    <div>
+        <Link to ="localhost:3000/"><h3>Cards</h3></Link>
+        <Link to="localhost:3000/cart"><h3>Cart</h3></Link>
+    </div>
     )
     }
 
