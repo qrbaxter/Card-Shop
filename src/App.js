@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
 
-        <Route exact path = "localhost:3000/">
+        <Route exact path = "localhost:3001/">
           <Cards />
         </Route>
 
