@@ -1,7 +1,7 @@
 import React, {useContext} from "react"
 
 import Card from "../components/Card"
-import {Context} from "../Context"
+//LINK CONTEXT
 
 function Cards(){
     return (
