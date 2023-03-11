@@ -8,8 +8,9 @@ import Cards from "./pages/Cards"
 function App() {
   return (
     <div>
-      <Header />
-      <Routes>
+    
+      <Header /> 
+       <Routes>
 
         <Route exact path = "/">
           <Cards />
