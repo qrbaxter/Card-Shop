@@ -11,11 +11,11 @@ function App() {
       <Header />
       <Routes>
 
-        <Route exact path = "localhost:3001/">
+        <Route exact path = "/">
           <Cards />
         </Route>
 
-        <Route path = "localhost:3000/cart">
+        <Route path = "/cart">
           <Cart />
         </Route>
         
