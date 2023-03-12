@@ -1,14 +1,14 @@
-// import React, {useState, useEffect} from "react"
+import React, {useState, useEffect} from "react"
 
-// const Context = React.createContext()
+const Context = React.createContext()
 
-// function ContextProvider({children}){
+function ContextProvider({children}){
  
-//     return (
-//       <Context.Provider value = {{}}>
-//         {children}
-//       </Context.Provider>
-//     )
-// }
+    return (
+      <Context.Provider value = {{}}>
+        {children}
+      </Context.Provider>
+    )
+}
 
-// export {ContextProvider, Context}
+export {ContextProvider, Context}

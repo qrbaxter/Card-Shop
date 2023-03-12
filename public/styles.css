@@ -1,0 +1,83 @@
+
+
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    margin: 0;
+    padding: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: white;
+    color: black;
+    padding: .5em;
+    font-family: serif;
+    height: 100vh;
+    text-align:center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cardslink {
+    font-weight: bold;
+    margin: 0 1em;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+.cartlink {
+    margin-left: auto;
+    color: black;
+    padding: 1em;
+    display: inline-block;
+    border-radius: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.cardslink:hover, .cartlink:hover {
+    color: lightcoral
+}
+
+.cardslink:hover, .cartlink:hover::after {
+    color: lightcoral;
+}
+
+.cardsTitle{
+    padding: 0;
+    margin: 0.2em;
+}
+
+.moreCardBtn {
+    background-color: white;
+    border: none;
+    font-weight:bold;
+    margin-bottom: 2em;
+}
+
+.moreCardBtn:hover {
+    background-color: palevioletred;
+    color: white;
+    border-radius: 2em;
+}
+
+
+
+

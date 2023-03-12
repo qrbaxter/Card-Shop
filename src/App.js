@@ -6,6 +6,8 @@ import Cart from "./pages/Cart";
 import Cards from "./pages/Cards";
 
 function App() {
+
+
   return (
     <div>
       <Header />
