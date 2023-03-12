@@ -19,7 +19,10 @@ function Cards(){
     <main>
         <h1 className = "cardsTitle">Cards</h1>
         <button className="moreCardBtn">See More Cards</button>
-        {cardElements}
+        <div className = "cardElementerino">
+            {cardElements}
+        </div>
+       
     </main>
     )
     }
