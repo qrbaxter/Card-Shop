@@ -14,8 +14,7 @@ function Header(){
     <header className = "headerpiece"> 
         <Link to ="/" className="cardslink">Cards</Link>
         <Link to="/cart" className="cartlink">
-            <h1>Cart</h1>
-        <h1 className={`${cartClassName}`}>Hello</h1>
+        <h1 className={`${cartClassName} carterinos`}>Cart</h1>
         </Link>
     </header>
     )

@@ -84,10 +84,11 @@ ul {
     grid-gap: 20px;
 }
 
-.cartColorEmpty {
+.cartColorEmpty, .deleteItemEmpty {
     background-color: gray;
 }
 
-.cartColorFull{
-    background-color: palevioletred
+.cartColorFull, .deleteItemFull{
+    background-color: lightseagreen
 }
+
