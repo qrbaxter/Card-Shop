@@ -1,15 +1,15 @@
 import React, {useState, useContext} from "react"
-import PropTypes from "prop-types"
 
 import {Context} from "../Context"
 import useHover from "../hooks/useHover"
-import { NavItem } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons"
 
 function Card({ className, card }) {
     const [hovered, ref] = useHover()
     const {toggleFavorite, addToCart, cartItems, removeFromCart} = useContext(Context)
 
-    function heartText(){
+    function heartIcon(){
         if (card.isFavorite) {
             return <h1 className = "redHeart" onClick = {toggleFavorite(card.id)}>Heart</h1>
         } else if (hovered) {
@@ -17,7 +17,7 @@ function Card({ className, card }) {
         }
     }
 
-    function cartText() {
+    function cartIcon() {
         const alreadyInCart = cartItems.some(item => item.id === card.id)
         if(alreadyInCart) {
             return <h1 className="redCart" onClick={() => removeFromCart(card.id)}>Carto</h1>
@@ -38,8 +38,8 @@ function Card({ className, card }) {
 >
 
     <img src={card.image} alt={card.code} id = {card.code} className="image-grid" />
-    {heartText()}
-    {cartText()}
+    {heartIcon()}
+    {cartIcon()}
 
   </div>
   );

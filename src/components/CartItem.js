@@ -1,29 +1,26 @@
 import React, {useState, useContext} from "react"
 import {Context} from "../Context"
 import useHover from "../hooks/useHover"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash as faSolidTrash } from "@fortawesome/free-solid-svg-icons"
+import { faTrashAlt as faRegularTrash } from "@fortawesome/free-regular-svg-icons"
 
-function CartItem({item}){
-    const [hovered,ref] = useHover()
-    const {removeFromCart} = useContext(Context)
+function CartItem({card}) {
+  const [hovered, ref] = useHover()
+  const {removeFromCart} = useContext(Context)
 
-    const iconClassName = hovered ? "deleteItemFull" : "deleteItemEmpty"
+  const icon= hovered ? faSolidTrash : faRegularTrash
 
-    return (
-        <div className = "cart-item">
-            <h1 
-            className = {iconClassName}
-            onClick={() => removeFromCart(item.id)}
-            ref={ref}
-            >Delete Item</h1>
-            <img alt = "testingImage" src="../testimage.png" width="130px" />
-            <p>$5.99</p>
-            
-        </div>
-        
-    )
-
-   
+  return (
+    <div className="cart-item">
+      <FontAwesomeIcon
+        icon = {icon}
+        onClick={() => removeFromCart(card.code)}
+        ref={ref} />
+      <img alt="Hello" src={card.image} width="30px" />
+      <p>$5.99</p>
+    </div>
+  )
 }
-
 
 export default CartItem
