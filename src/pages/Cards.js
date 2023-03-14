@@ -1,8 +1,7 @@
 import React, {useContext} from "react"
 
-
-import {Context} from "../Context"
 import Card from "../components/Card"
+import {Context} from "../Context"
 
 
 
@@ -20,7 +19,7 @@ function Cards(){
         <h1 className = "cardsTitle">Cards</h1>
         <button className="moreCardBtn">See More Cards</button>
         <div className = "cardElementerino">
-            {cardElements}
+            {/* {cardElements} */}
         </div>
        
     </main>

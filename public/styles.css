@@ -80,7 +80,7 @@ ul {
 
 .cardElementerino {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
     grid-gap: 20px;
 }
 
@@ -94,4 +94,28 @@ ul {
 
 .carterino {
     margin-top: 10em;
+}
+
+.image-grid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main.cart-page {
+    padding: 10px;
+}
+
+.cart-page > h1 {
+    text-align: center;
+}
+
+.cart-page .total-cost {
+    text-align: right;
+    font-size: 1.3em;
+}
+
+.cart-page div.order-button {
+    display: flex;
+    justify-content: center;
 }

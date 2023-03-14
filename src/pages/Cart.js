@@ -1,11 +1,44 @@
 import React, {useState, useContext} from "react"
-//LINk CONTEXT
+import {Context} from "../Context"
 import CartItem from "../components/CartItem"
 
 function Cart(){
+  const [buttonText, setButtonText] = useState("Place Order")
+  const {cartItems, emptyCart} = useContext(Context)
+  const totalCost = 5.99 * cartItems.length
+  const totalCostDisplay = totalCost.toLocaleString("en-US", {style: "currency", currency: "USD"})
+
+  const cartItemElements = cartItems.map(item => (
+    <CartItem key = {item.code} item= {item} />
+  ))
+
+  function placeOrder() {
+    setButtonText("Ordering...")
+    setTimeout(()=> {
+      console.log("Order Placed!")
+      setButtonText("Place Order")
+      emptyCart()
+    }, 3000)
+  }
+
+
     return (
-      <main>
-      <h1>Carterino</h1> 
+      <main className = "cart-page">
+        <div>
+      <h1>Check Out</h1>
+      {cartItemElements}
+      <p className="total-cost">Total: {totalCostDisplay}</p> 
+      {
+          cartItems.length > 0 ? 
+          <div className="order-button">
+            <button onClick = {placeOrder}>{buttonText}</button>
+          </div> :
+          <div>
+          <p>You have no items in your cart</p>
+          </div>
+
+      }
+      </div>
       </main>
     )
 }

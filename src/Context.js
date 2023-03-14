@@ -23,9 +23,9 @@ function ContextProvider({children}){
           .catch((error) => console.log(error));
       }, []);
 
-    function toggleFavorite(id) {
+    function toggleFavorite(code) {
         const updatedArr = allCards.map((card)=> {
-            if(card.id === id){
+            if(card.code === code){
                 return {...card, isFavorite: !card.isFavorite}
             }
             return card
@@ -38,8 +38,8 @@ function ContextProvider({children}){
 
     }
 
-    function removeFromCart(id) {
-        setCartItems(prevItems => prevItems.filter(item=> item.id !==id))
+    function removeFromCart(code) {
+        setCartItems(prevItems => prevItems.filter(item=> item.code !==code))
     }
 
     function emptyCart(){
@@ -49,7 +49,6 @@ function ContextProvider({children}){
     return (
       <Context.Provider value = {{
         allCards,
-        setAllCards,
         toggleFavorite,
         cartItems,
         addToCart,
