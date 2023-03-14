@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 
 const Context = React.createContext()
 
-function ContextProvider({children}){
+function ContextProvider({children, page}){
     
     const [allCards, setAllCards] = useState([])
     const [cartItems, setCartItems] = useState([])

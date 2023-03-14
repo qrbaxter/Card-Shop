@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"
+import React, {useContext} from "react"
 
 import {Context} from "../Context"
 import useHover from "../hooks/useHover"
@@ -33,11 +33,11 @@ function Card({ className, card }) {
   return (
 
   <div 
-    className = {`${className} cardHoverino`}
+    className = {`${className} card-container`}
     ref={ref}
 >
 
-    <img src={card.image} alt={card.code} code = {card.code} className="image-grid" />
+    <img src={card.image} className="card-grid" />
     {heartIcon()}
     {cartIcon()}
 
