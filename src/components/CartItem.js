@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash as faSolidTrash } from "@fortawesome/free-solid-svg-icons"
 import { faTrashAlt as faRegularTrash } from "@fortawesome/free-regular-svg-icons"
 
-function CartItem({card}) {
+function CartItem({cards}) {
   const [hovered, ref] = useHover()
   const {removeFromCart} = useContext(Context)
 
@@ -14,10 +14,11 @@ function CartItem({card}) {
   return (
     <div className="cart-item">
       <FontAwesomeIcon
+        className = "cartDeleteFromIcon"
         icon = {icon}
-        onClick={() => removeFromCart(card.code)}
+        onClick={() => removeFromCart(cards.code)}
         ref={ref} />
-      <img alt="Hello" src={card.image} width="30px" />
+      <img alt="Hello" src={cards.image} width="30px" />
       <p>$5.99</p>
     </div>
   )

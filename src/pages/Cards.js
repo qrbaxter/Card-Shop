@@ -8,8 +8,8 @@ import {Context} from "../Context"
 function Cards(){
     const {allCards} = useContext(Context)
 
-    const cardElements = allCards.map((card) => (
-        <Card key={card.code} card={card} />
+    const cardElements = allCards.map((cards) => (
+        <Card key={cards.code} cards={cards} isFavorite = "false"/>
       ));
       
 
@@ -19,7 +19,7 @@ function Cards(){
         <h1 className = "cardsTitle">Cards</h1>
         <button className="moreCardBtn">See More Cards</button>
         <div className = "cardElementerino">
-            {/* {cardElements} */}
+            {cardElements}
         </div>
        
     </main>

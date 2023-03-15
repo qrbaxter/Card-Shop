@@ -25,7 +25,7 @@ function ContextProvider({children}){
 
     function toggleFavorite(code) {
         const updatedArr = allCards.map((card)=> {
-            if(card.code === code){
+            if(card.code ===code){
                 return {...card, isFavorite: !card.isFavorite}
             }
             return card
