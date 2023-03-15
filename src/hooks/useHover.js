@@ -13,19 +13,14 @@ function useHover() {
     }
     
     useEffect(() => {
-        if (!ref.current) {
-          return;
-        }
-        
-        ref.current.addEventListener("mouseenter", enter);
-        ref.current.addEventListener("mouseleave", leave);
+        ref.current.addEventListener("mouseenter", enter)
+        ref.current.addEventListener("mouseleave", leave)
         
         return () => {    
-            ref.current.removeEventListener("mouseenter", enter);
-            ref.current.removeEventListener("mouseleave", leave);
-        };
-    }, []);
-    
+            ref.current.removeEventListener("mouseenter", enter)
+            ref.current.removeEventListener("mouseleave", leave)
+        }
+    }, [])
     
     return [hovered, ref]
 }
