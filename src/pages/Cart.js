@@ -9,9 +9,9 @@ function Cart(){
   const totalCostDisplay = totalCost.toLocaleString("en-US", {style: "currency", currency: "USD"})
 
   const cartItemElements = cartItems.map(item => (
-    <CartItem key = {item.code} item= {item} />
+    <CartItem key = {item.code} card= {item} />
   ))
-
+  
   function placeOrder() {
     setButtonText("Ordering...")
     setTimeout(()=> {

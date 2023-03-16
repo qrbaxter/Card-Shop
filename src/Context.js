@@ -23,6 +23,8 @@ function ContextProvider({children}){
           .catch((error) => console.log(error));
       }, []);
 
+    
+
     function toggleFavorite(code) {
         const updatedArr = allCards.map((card)=> {
             if(card.code === code){
