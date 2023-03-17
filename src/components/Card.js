@@ -9,7 +9,7 @@ import { faCreditCard as faSolidCreditCard } from "@fortawesome/free-solid-svg-i
 import { faCreditCard as faRegularCreditCard } from "@fortawesome/free-regular-svg-icons";
 
 
-function Card({ className, card }) {
+function Card({ card }) {
     const [hovered, ref] = useHover()
     const {toggleFavorite, addToCart, cartItems, removeFromCart} = useContext(Context)
 
@@ -35,7 +35,7 @@ function Card({ className, card }) {
 
 
       return (
-        <div className={`${className} cardHoverino`} ref={ref}>
+        <div className={`cardHoverino`} ref={ref}>
           <img src={card.image} alt={card.code} code={card.code} className="card-image image-grid" />
           
           <div className = "icon-container">{heartIcon()}

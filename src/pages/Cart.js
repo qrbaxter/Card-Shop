@@ -4,6 +4,7 @@ import CartItem from "../components/CartItem"
 
 function Cart(){
   const [buttonText, setButtonText] = useState("Place Order")
+  const [finishedOrderText, setFinishedOrderText] = useState(true)
   const {cartItems, emptyCart} = useContext(Context)
   const totalCost = 5.99 * cartItems.length
   const totalCostDisplay = totalCost.toLocaleString("en-US", {style: "currency", currency: "USD"})
@@ -18,7 +19,11 @@ function Cart(){
       console.log("Order Placed!")
       setButtonText("Place Order")
       emptyCart()
+      setFinishedOrderText(true)
     }, 3000)
+      setTimeout(()=>{
+      setFinishedOrderText(false)
+    },10000)
   }
 
 
@@ -32,6 +37,10 @@ function Cart(){
           cartItems.length > 0 ? 
           <div className="order-button">
             <button onClick = {placeOrder}>{buttonText}</button>
+          </div> :
+          finishedOrderText ? 
+          <div>
+            <h1>Thankyou for your order! it is being processed, and should arrive within 5-10 business days.</h1>
           </div> :
           <div>
           <p>You have no items in your cart</p>

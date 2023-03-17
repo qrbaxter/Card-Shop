@@ -13,26 +13,33 @@ function useHover() {
   }
 
   useEffect(() => {
-    ref.current.addEventListener("mouseenter", enter);
-    ref.current.addEventListener("mouseleave", leave);
-
+    if (!ref.current) return;
+  
+    const currentRef = ref.current;
+  
+    currentRef.addEventListener("mouseenter", enter);
+    currentRef.addEventListener("mouseleave", leave);
+  
     // New event listeners for the icons
-    ref.current.querySelectorAll("svg").forEach((icon) => {
+    currentRef.querySelectorAll("svg").forEach((icon) => {
       icon.addEventListener("mouseenter", enter);
       icon.addEventListener("mouseleave", leave);
     });
-
+  
     return () => {
-      ref.current.removeEventListener("mouseenter", enter);
-      ref.current.removeEventListener("mouseleave", leave);
-
+      if (!currentRef) return;
+  
+      currentRef.removeEventListener("mouseenter", enter);
+      currentRef.removeEventListener("mouseleave", leave);
+  
       // Remove event listeners for the icons
-      ref.current.querySelectorAll("svg").forEach((icon) => {
+      currentRef.querySelectorAll("svg").forEach((icon) => {
         icon.removeEventListener("mouseenter", enter);
         icon.removeEventListener("mouseleave", leave);
       });
     };
   }, []);
+  
 
   return [hovered, ref];
 }

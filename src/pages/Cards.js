@@ -6,7 +6,7 @@ import {Context} from "../Context"
 
 
 function Cards(){
-    const {allCards} = useContext(Context)
+    const {allCards, fetchNewCards} = useContext(Context)
 
     const cardElements = allCards.map((card) => (
         <Card key={card.code} card={card} />
@@ -17,7 +17,7 @@ function Cards(){
 
     <main>
         <h1 className = "cardsTitle">Cards</h1>
-        <button className="moreCardBtn">See More Cards</button>
+        <button className="moreCardBtn" onClick = {fetchNewCards}>See More Cards</button>
         <div className = "cardElementerino">
             {cardElements}
         </div>
